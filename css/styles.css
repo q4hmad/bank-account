@@ -1,0 +1,17 @@
+#firstColumn, #secondColumn {
+  background-color: salmon;
+}
+.h4 {
+  text-align: center;
+}
+#bottomColumn {
+  background-color: salmon;
+}
+#spacing {
+
+  padding-top: 250px;
+  padding-left: 400px
+}
+#bottomColumn {
+  padding-left: 100px;
+}
