@@ -6,14 +6,17 @@ function Account(name, initial, deposit, withdrawal) {
   this.withdrawal = withdrawal;
 }
 Account.prototype.accountTotal = function() {
-  var total = this.initial;
-  if (this.deposit > total) {
-  return ("Your account balance is $" + (this.deposit + total) + ".");
+  if (this.withdrawal) {
+    var total = this.initial - this.withdrawal
   }
-  else if (total > 0) {
-    return ("Welcome to the Epicodus Credit Union! Your current balance is " + "$" +
-  total + ".00");
+  if (this.deposit) {
+    var total = this.initial + this.deposit;
+
+  } else if (this.initial < 0) {
+    var total = this.initial;
   }
+
+  return (total);
 }
 
 
