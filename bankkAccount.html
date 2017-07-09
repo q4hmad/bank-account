@@ -10,6 +10,9 @@
 </head>
 
 <body>
+  <div class="well">
+    <h2>Welcome to the Epicodus Credit Union!</h2>
+  </div>
   <div class="container">
     <div class="col-sm-5" id="firstColumn">
       <h2>Register a new account:</h2>
@@ -17,48 +20,63 @@
 
         <div class="form-group">
           <label for="newAccount">Name:</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control name">
         </div>
         <div class="form-group">
           <label for="initialDeposit">Initial Deposit:</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control initialDeposit">
         </div>
     </div>
-    </form>
-  <div class="col-sm-1">
-  </div>
+
+    <div class="col-sm-1">
+    </div>
 
     <div class="col-sm-5" id="secondColumn">
       <h2>Deposit or withdraw funds:</h2>
       <form id="depositWithdrawals">
         <div class="form-group">
           <label for="depositAmount">Deposit Amount:</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control depositAmount">
         </div>
         <div class="form-group">
           <label for="withdrawlAmount">Withdrawal Amount:</label>
-          <input type="text" class="form-control">
-        </div>
-      </div>
-
-        <div class="row" id="spacing">
-        </div>
-
-        <div class="col=sm-12">
-
-        <div class="col-md-10" id="bottomColumn">
-          <div id="currentBalance">
-            <h4>Current Balance:</h4>
-            <div class="form-group">
-              <label for="currentBalance"></label>
-              <input type="text" class="form-control">
-            </div>
-        </div>
-
-
+          <input type="text" class="form-control withdrawalAmount">
         </div>
     </div>
+
+    <div class="row" id="spacing">
+      <br>
+      <br>
+    </div>
+
+    <div class="col-sm-12">
+
+      <div class="col-md-10" id="bottomColumn">
+        <div id="currentBalance">
+          <h4>Current Balance:</h4>
+          <div class="form-group">
+            <label for="currentBalance"></label>
+            <input type="text" class="form-control currentBalance">
+
+          </div>
+        </div>
+
+        <div class="row" id="spacing2">
+          <br>
+          <br>
+        </div>
+        <div class="col-sm-12" id="submitBtn">
+          <button type="submit" class="btn btn-info">Submit</button>
+        </div>
+      </div>
     </form>
+
+    </div>
+    </form>
+    <div id="inputResult">
+      <ul>
+      </ul>
+    </div>
 
 
 

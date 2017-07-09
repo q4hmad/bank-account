@@ -1,39 +1,36 @@
-//Business Logic
-
-function Ticket(movie, time, age) {
-  this.movie = movie;
-  this.time = time;
-  this.age = [];
+//business Logic
+function Account(name, initial, deposit, withdrawal) {
+  this.name = name;
+  this.initial = initial;
+  this.deposit = deposit;
+  this.withdrawal = withdrawal;
 }
-
-Ticket.prototype.ticketPrice = function() {
-  if (this.movie === "UP" || this.age >= 65) {
-    var price = "$5.00";
-  } else if (this.time != "morning" && this.age < 65) {
-    var price = "$10.00";
-  } else if (this.movie = "morning") {
-    var price = "$5.00"
+Account.prototype.accountTotal = function() {
+  var total = this.initial;
+  if (this.deposit > total) {
+  return ("Your account balance is $" + (this.deposit + total) + ".");
   }
- return ("The cost of " + this.movie + " at " + this.time + "will be " + price);
+  else if (total > 0) {
+    return ("Welcome to the Epicodus Credit Union! Your current balance is " + "$" +
+  total + ".00");
+  }
 }
 
 
-//User-end Logic
+//user interface Logic
 $(document).ready(function() {
-  $("form#ticketForm").submit(function(event) {
+  $("form#newAccount").submit(function(event) {
     event.preventDefault();
-    var movie = $("input:radio[name=movie]:checked").val();
-    console.log(movie);
-    var time = $("input:radio[name=time]:checked").val();
-    console.log(time);
-    var age = parseInt($("input.inputAge").val());
-    console.log(age);
-
-    var ticketInfo = new Ticket(movie, time, age);
-    console.log(ticketInfo.ticketPrice());
-
-    $("#ticketResult").append("ticketInfo.ticketPrice")
-
-
+    var name = $("input.name").val();
+    console.log(name);
+    var firstDeposit = parseInt($("input.initialDeposit").val());
+    var deposit = parseInt($("input.depositAmount").val());
+    console.log(deposit);
+    var withdrawal = parseInt($("input.withdrawalAmount").val());
+    console.log(withdrawal);
+    var newAccount = new Account(name, firstDeposit, deposit, withdrawal);
+    console.log(firstDeposit);
+    var currentBalance = newAccount.accountTotal();
+    console.log(currentBalance);
   });
 });
